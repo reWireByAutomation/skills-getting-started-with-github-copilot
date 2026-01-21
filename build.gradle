@@ -32,7 +32,7 @@ dependencies {
     
     // SLF4J Logging
     implementation 'org.slf4j:slf4j-api:2.0.9'
-    implementation 'ch.qos.logback:logback-classic:1.4.11'
+    implementation 'ch.qos.logback:logback-classic:1.4.14'
     
     // Extent Reports
     implementation 'com.aventstack:extentreports:5.1.1'
