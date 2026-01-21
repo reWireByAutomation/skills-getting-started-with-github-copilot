@@ -6,16 +6,18 @@ plugins {
 group 'com.automation'
 version '1.0.0'
 
-sourceCompatibility = '11'
-targetCompatibility = '11'
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    // Appium Java Client
-    implementation 'io.appium:java-client:8.6.0'
+    // Appium Java Client (updated to 9.x for Selenium 4.15 compatibility)
+    implementation 'io.appium:java-client:9.1.0'
     
     // Selenium WebDriver
     implementation 'org.seleniumhq.selenium:selenium-java:4.15.0'

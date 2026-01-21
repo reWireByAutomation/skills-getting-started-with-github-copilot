@@ -5,7 +5,7 @@ A robust, scalable, and reusable framework for mobile application automation tes
 ## Framework Stack
 
 - **Language**: Java 11
-- **Mobile Automation**: Appium Java Client 8.6.0
+- **Mobile Automation**: Appium Java Client 9.1.0
 - **BDD Framework**: Cucumber 7.14.0 with Gherkin
 - **Build Tool**: Gradle
 - **Test Framework**: TestNG 7.8.0
@@ -315,7 +315,7 @@ To enable parallel execution, update `testng.xml`:
 All dependencies are managed through Gradle. Key dependencies:
 
 ```gradle
-- Appium Java Client: 8.6.0
+- Appium Java Client: 9.1.0
 - Selenium WebDriver: 4.15.0
 - Cucumber: 7.14.0
 - TestNG: 7.8.0
