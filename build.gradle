@@ -1,0 +1,67 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'com.automation'
+version '1.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Appium Java Client (updated to 9.x for Selenium 4.15 compatibility)
+    implementation 'io.appium:java-client:9.1.0'
+    
+    // Selenium WebDriver
+    implementation 'org.seleniumhq.selenium:selenium-java:4.15.0'
+    
+    // Cucumber BDD
+    implementation 'io.cucumber:cucumber-java:7.14.0'
+    implementation 'io.cucumber:cucumber-testng:7.14.0'
+    implementation 'io.cucumber:cucumber-picocontainer:7.14.0'
+    
+    // TestNG
+    implementation 'org.testng:testng:7.8.0'
+    
+    // SLF4J Logging
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    implementation 'ch.qos.logback:logback-classic:1.4.14'
+    
+    // Extent Reports
+    implementation 'com.aventstack:extentreports:5.1.1'
+    implementation 'tech.grasshopper:extentreports-cucumber7-adapter:1.14.0'
+    
+    // JSON Processing
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'org.json:json:20231013'
+    
+    // Apache Commons
+    implementation 'commons-io:commons-io:2.15.0'
+    implementation 'org.apache.commons:commons-lang3:3.13.0'
+}
+
+test {
+    useTestNG() {
+        useDefaultListeners = true
+        suites 'src/test/resources/testng.xml'
+    }
+    
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+}
+
+task cucumberTest(type: Test) {
+    description = 'Runs Cucumber tests'
+    useTestNG() {
+        suites 'src/test/resources/testng.xml'
+    }
+}
